@@ -6,7 +6,7 @@
 \usage{
 wp.mrt2arm(n = NULL, f = NULL, J = NULL, tau00 = NULL, tau11 = NULL,
   sg2 = NULL, power = NULL, alpha = 0.05, alternative = c("two.sided",
-  "one.sided"), type = c("main", "site", "variance"))
+  "one.sided"), type = c("main", "site", "variance"), interval = NULL)
 }
 \arguments{
 \item{n}{Sample size. It is the number of individuals within each cluster.}
@@ -31,13 +31,15 @@ wp.mrt2arm(n = NULL, f = NULL, J = NULL, tau00 = NULL, tau11 = NULL,
 The type "main" tests treatment main effect, no tau00 needed;
 Type "site" tests the variance of cluster/site means, no tau11 or f needed;
 and Type "variance" tests variance of treatment effects, no tau00 or f needed.}
+\item{interval}{A vector containing the end-points of the interval to be searched for the root.}
+
 }
 \value{
 An object of the power analysis.
 }
 \description{
-Multisite randomized trials (MRT) are a type of multilevel design for the situation when the entire cluster is randomly assigned to either a treatment arm or a contral arm \cite{(Liu, 2013)}.
-The data from MRT can be analyzed in a two-level hierachical linear model, where the indicator variable for treatment assignment is included in first level. If a study contains multiple treatments, then mutiple indicators will be used.
+Multisite randomized trials (MRT) are a type of multilevel design for the situation when the entire cluster is randomly assigned to either a treatment arm or a control arm \cite{(Liu, 2013)}.
+The data from MRT can be analyzed in a two-level hierarchical linear model, where the indicator variable for treatment assignment is included in first level. If a study contains multiple treatments, then multiple indicators will be used.
 This function is for designs with 2 arms (i.e., a treatment and a control).
 Three types of tests are considered in the function: (1) The "main" type tests treatment main effect;
 (2) The "site" type tests the variance of cluster/site means;
@@ -81,7 +83,7 @@ res<- wp.mrt2arm(n = 45, f = 0.5, J = 20, tau11 = 0.5,
 #  URL: http://psychstat.org/mrt2arm
 
 #To generate a power curve given a sequence of sample sizes:
-wp.mrt2arm(n = seq(10,50,5), f = 0.5, J = 20, tau11 = 0.5,
+res <- wp.mrt2arm(n = seq(10,50,5), f = 0.5, J = 20, tau11 = 0.5,
                           sg2 = 1.25, alpha = 0.05, power = NULL)
 #  Power analysis for Multileve model Multisite randomized trials with 2 arms
 #

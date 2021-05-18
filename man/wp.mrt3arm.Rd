@@ -6,7 +6,7 @@
 \usage{
 wp.mrt3arm(n = NULL, f1 = NULL, f2 = NULL, J = NULL, tau = NULL,
   sg2 = NULL, power = NULL, alpha = 0.05, alternative = c("two.sided",
-  "one.sided"), type = c("main", "treatment", "omnibus"))
+  "one.sided"), type = c("main", "treatment", "omnibus"), interval = NULL)
 }
 \arguments{
 \item{n}{Sample size. It is the number of individuals within each cluster.}
@@ -28,19 +28,21 @@ wp.mrt3arm(n = NULL, f1 = NULL, f2 = NULL, J = NULL, tau = NULL,
 \item{alternative}{Type of the alternative hypothesis (\code{"two.sided"} or \code{"one.sided"}). The default is "two.sided". The option "one.sided" can be either "less" or "greater".}
 
 \item{type}{Type of effect (\code{"main"} or \code{"treatment"} or \code{"omnibus"}) with "main" as default.
-The type "main" tests the difference between the average tratment arms and the contraol arm;
+The type "main" tests the difference between the average treatment arms and the control arm;
 Type "treatment" tests the difference between the two treatment arms;
 and Type "omnibus" tests whether the three arms are all equivalent.}
+\item{interval}{A vector containing the end-points of the interval to be searched for the root.}
+
 }
 \value{
 An object of the power analysis.
 }
 \description{
-Multisite randomized trials (MRT) are a type of multilevel design for the situation when the entire cluster is randomly assigned to either a treatment arm or a contral arm \cite{(Liu, 2013)}.
-The data from MRT can be analyzed in a two-level hierachical linear model, where the indicator variable for reatment assignment is included in first level. If a study contains multiple treatments, then mutiple indicators will be used.
+Multisite randomized trials (MRT) are a type of multilevel design for the situation when the entire cluster is randomly assigned to either a treatment arm or a control arm \cite{(Liu, 2013)}.
+The data from MRT can be analyzed in a two-level hierarchical linear model, where the indicator variable for treatment assignment is included in first level. If a study contains multiple treatments, then multiple indicators will be used.
 This function is for designs with 3 arms (i.e., two treatments and a control).
 Three types of tests are considered in the function: (1) The "main" type tests treatment main effect;
-(2) The "treatment" type tests the difference between the two treaments;
+(2) The "treatment" type tests the difference between the two treatments;
 and (3) The "omnibus" type tests whether the three arms are all equivalent.
 Details leading to power calculation can be found in \cite{Raudenbush (1997)} and \cite{Liu (2013)}.
 }
@@ -103,7 +105,7 @@ res
 #    URL: http://psychstat.org/mrt3arm
 
 #To plot the power curve:
-plot(res) 
+plot(res, "J", "power")
 
 #To calculate the required sample size given power and effect size:
 wp.mrt3arm(n = NULL, f1 = 0.43, J = 20, tau = 0.4,

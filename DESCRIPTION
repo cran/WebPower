@@ -1,7 +1,7 @@
 Package: WebPower
 Title: Basic and Advanced Statistical Power Analysis
-Version: 0.5.2
-Date: 2018-11-29
+Version: 0.6
+Date: 2021-05-17
 Authors@R: c(person("Zhiyong", "Zhang", role = c("aut", "cre"),
                      email = "johnnyzhz@gmail.com"),
               person("Yujiao", "Mai", role = "aut"),
@@ -20,6 +20,6 @@ Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
 NeedsCompilation: no
-Packaged: 2018-11-29 14:39:59 UTC; zzhang4
+Packaged: 2021-05-18 00:53:59 UTC; zzhang4
 Repository: CRAN
-Date/Publication: 2018-11-29 15:10:04 UTC
+Date/Publication: 2021-05-18 04:30:02 UTC
