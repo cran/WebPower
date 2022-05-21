@@ -55,7 +55,7 @@ A power curve is useful to graphically display how power changes with sample siz
 This function is to generate a power curve for SEM based on Monte Carlo simulation, either using Sobel test or bootstrap method to test the indirect / mediation effects if applicable.
 }
 \examples{
-\dontrun{
+\donttest{
 #To specify the model
 ex2model ="
 		ept ~ start(0.4)*hvltt + b*hvltt + start(0)*age + start(0)*edu + start(2)*R
