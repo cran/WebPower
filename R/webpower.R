@@ -3292,7 +3292,7 @@ wp.mc.sem.boot<-function(model, indirect=NULL, nobs=100, nrep=1000, nboot=1000, 
 	
 	## internal function
 	coef.new<-function(x,...){
-		coef(x, type='user', ...)
+		lavaan::coef(x, type='user', ...)
 	}
 	model.indirect<-paste(model, "\n", indirect, "\n")
 	ngroups <- length(nobs)
@@ -3368,7 +3368,7 @@ wp.mc.sem.boot<-function(model, indirect=NULL, nobs=100, nrep=1000, nboot=1000, 
 		## Step 3: Conduct bootstrap analysis
 		if (!inherits(temp.res, "try-error")){
 		orig.res<-coef.new(temp.res)
-		boot.res<-bootstrapLavaan(temp.res, FUN=coef.new, R=nboot, parallel="no", warn=FALSE, ...)
+		boot.res<-bootstrapLavaan(temp.res, FUN=coef.new, R=nboot, ...)
 		ci.res<-ci.bc(boot.res, orig.res, cl=alpha)
 		## Step 4: Check the coverage		
 		 

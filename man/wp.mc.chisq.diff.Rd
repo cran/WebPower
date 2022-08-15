@@ -29,6 +29,8 @@ This function is for SEM power analysis based on the chi-square difference test.
 }
 \examples{
 \donttest{
+set.seed(20220722)
+
 full.model.pop <-'
 y1 ~ 0.4*x
 y2 ~ 0.5*x + 0.2*y1
