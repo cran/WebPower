@@ -1,6 +1,6 @@
-6a8b5c6406c356d582f88c1f0eee5aa6 *DESCRIPTION
+42c75a24a60c07633ef671e82d824b33 *DESCRIPTION
 77ce37592797eb37f3489c01884eb73c *NAMESPACE
-3e41a6bd9460e6de702b4b4c15de9cc0 *R/webpower.R
+3ed98a173f71d5f4b51ea5b3e80606ec *R/webpower.R
 83b0027813eefbbbb56cdfae00a9adcf *data/webpower.RData
 f4c53917e7a6ce6720539abe8c6f18a1 *inst/CRT2.txt
 89c990637ee226f3035f7bed8becdf51 *inst/CRT3.txt
@@ -34,7 +34,7 @@ f47638ab6d25a6d084b08d8701a95ff9 *man/wp.lcsm.Rd
 a248e63705d124999855b88a9bbd60bd *man/wp.logistic.Rd
 b949a85abbdf07083c01bd0ed2c880bb *man/wp.mc.chisq.diff.Rd
 79c72c0579f61cb3f992949d4144d629 *man/wp.mc.sem.basic.Rd
-d7f51da7eced57c30d5eca0e8460966b *man/wp.mc.sem.boot.Rd
+02d9a2bed42157d9fad252c810150fa5 *man/wp.mc.sem.boot.Rd
 f93dcccad006d428281f7e0a359bacb0 *man/wp.mc.sem.power.curve.Rd
 e3aa54355131249a67530e681459f10a *man/wp.mc.t.Rd
 60375052e10b52d9268e0edb729742e2 *man/wp.mediation.Rd

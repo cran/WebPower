@@ -3440,7 +3440,7 @@ wp.mc.sem.boot<-function(model, indirect=NULL, nobs=100, nrep=1000, nboot=1000, 
 	power<-apply(all.sig, 2, mean, na.rm=TRUE)
 	cvg<-apply(all.cvg, 2, mean, na.rm=TRUE)
 	info<-list(nobs=nobs, nrep=nrep, alpha=alpha, method="Normal", bootstrap=nboot)
-	print(power)
+	## print(power)
 	object<-list(power=power, coverage=cvg, pop.value=par.value, results=list(estimates=all.par, se=all.se, all=res), info=info, out=temp.res, data=newdata)
 	class(object)<-'power'
 	return(object)
@@ -3751,7 +3751,7 @@ wp.mc.chisq.diff <- function(full.model.pop, full.model, reduced.model, N=100, R
   power <- mean(chi.diff > qchisq(1-alpha, df))
   list(power=power, df=df, chi.dff=chi.diff)
   
-  structure(list(n = N, power = power, df=df, chi.dff=chi.diff, alpha = alpha), class = "webpower")
+  structure(list(n = N, power = power, df=df, alpha = alpha), class = "webpower")
 }
 
 sem.effect.size <- function(full.model.pop, reduced.model){
